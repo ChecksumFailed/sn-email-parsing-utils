@@ -10,6 +10,12 @@
         "sourceMap": false,
         "skipLibCheck": true
     },
-    "include": ["src/server/**/*.ts"],
-    "exclude": ["node_modules", "**/*.now.ts"]
+    "include": [
+        "src/server/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.now.ts",
+        "src/fluent" // Exclude the entire fluent folder
+    ]
 }

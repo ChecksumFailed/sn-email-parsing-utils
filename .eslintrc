@@ -1,11 +1,39 @@
 {
-    "env": {
-      "node": true
-    },
-    "parserOptions": {
-      "ecmaVersion": "latest",
-      "sourceType": "module"
-    },
-    "plugins": ["n","@servicenow/sdk-app-plugin"],
-    "extends": ["plugin:@servicenow/sdk-app-plugin/recommended"]
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json" // Ensure this points to your tsconfig.json
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "unused-imports"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": 2,
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-unused-vars": "off", // Disable default rule to avoid conflicts
+    "unused-imports/no-unused-imports": "error", // Correct rule for unused imports
+    "eqeqeq": ["error", "always"], // Enforce strict equality
+    "curly": ["error", "all"], // Require curly braces for all control statements
+    "no-console": "warn", // Warn on console usage
+    "prefer-const": "error", // Prefer const over let when variables are not reassigned
+    "no-var": "error", // Disallow var declarations
+    "arrow-body-style": ["error", "as-needed"], // Enforce concise arrow function bodies
+    "object-shorthand": ["error", "always"], // Require object shorthand where possible
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
   }
+}
