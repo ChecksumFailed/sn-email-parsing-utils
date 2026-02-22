@@ -4,30 +4,39 @@
   "description": "",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npx @servicenow/sdk build",
-    "deploy": "npx @servicenow/sdk deploy",
+    "build": "npm run lint && npx @servicenow/sdk build",
+    "deploy": "npm run lint && npx @servicenow/sdk deploy",
     "fetch": "npx @servicenow/sdk fetch",
-    "dependencies": "npx @servicenow/sdk dependencies"
+    "dependencies": "npx @servicenow/sdk dependencies",
+    "lint": "eslint src",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.3",
     "@servicenow/eslint-plugin-sdk-app-plugin": "4.2.0",
     "@servicenow/glide": "27.0.4",
     "@servicenow/sdk": "4.2.0",
     "@typescript-eslint/eslint-plugin": "^8.56.0",
     "@typescript-eslint/parser": "^8.56.0",
-    "eslint": "^10.0.1",
+    "eslint": "^9.39.3",
+    "eslint-plugin-jsdoc": "^62.7.0",
+    "eslint-plugin-regexp": "^3.0.0",
+    "eslint-plugin-security": "^4.0.0",
+    "eslint-plugin-sonarjs": "^4.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "typescript": "5.9.3"
+    "globals": "^17.3.0",
+    "husky": "^9.1.7",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.56.0"
   },
   "dependencies": {
     "parse5": "^8.0.0"
   },
   "overrides": {
     "fast-xml-parser": "5.3.7",
-    "minimatch": "10.2.2",
     "undici": "7.22.0",
     "lodash": "4.17.23",
-    "ajv": "8.18.0",
     "js-yaml": "4.1.1",
     "tmp": "0.2.5"
   }
